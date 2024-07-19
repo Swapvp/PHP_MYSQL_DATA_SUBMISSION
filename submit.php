@@ -22,13 +22,33 @@ $phone = $_POST['phone'];
 $stmt = $conn->prepare("INSERT INTO users (name, phone, email) VALUES (?, ?,  ?)");
 $stmt->bind_param("sss", $name, $phone,  $email);
 
+$success = false;
 if ($stmt->execute()) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $stmt->error;
+    $success = true;
 }
 
 $stmt->close();
 $conn->close();
 ?>
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submission Status</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <?php if ($success): ?>
+            <div class="success-message">
+                Your data has been submitted successfully.
+            </div>
+        <?php else: ?>
+            <div class="error-message">
+                There was an error submitting your data. Please try again.
+            </div>
+        <?php endif; ?>
+        <a href="index.php" class="back-link">Back to form</a>
+    </div>
+</body>
+</html>
