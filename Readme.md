@@ -6,8 +6,8 @@
 
 -Create a Table: Inside your new database, create a table (e.g., users) with appropriate columns  <br/>
 
-CREATE TABLE users (
+`CREATE TABLE users (
     id INT(11) AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL
-);
+);`
