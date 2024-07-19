@@ -9,6 +9,6 @@
 `CREATE TABLE users (
     id INT(11) AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
-    phone VARCHAR(10) NOT NULL,
+    phone INT(10) NOT NULL,
     email VARCHAR(100) NOT NULL
 );`
